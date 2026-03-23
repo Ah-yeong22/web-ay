@@ -7,7 +7,7 @@ public class Ex2_ByteExample {
 		byte var1 = (byte) -129;
 		System.out.println("var : " + var1);
 		byte var2 = 127;
-		byte var3 = 128; //범위를 벗어나서 오류
+		//byte var3 = 128; //범위를 벗어나서 오류
 	
 	}
 
