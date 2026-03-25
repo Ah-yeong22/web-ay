@@ -83,5 +83,19 @@ public class StringExample {
 		}//for
 		
 		System.out.println("a의 개수 :" + count);
+		//-------------------------------------------
+		
+		System.err.println("원본 : ");
+		String original = sc.next();
+		String reverse ="";
+		
+		for(int i = original.length()-1; i >=0; i--) {
+			reverse += original.charAt(i);
+		}
+		if(original.equals(reverse)) {
+			System.out.println("같습니다.");
+		}else {
+			System.out.println("다릅니다.");
+		}
 	}
 }
