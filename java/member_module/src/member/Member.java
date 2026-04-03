@@ -5,6 +5,7 @@ public class Member {
 	private String name;
 	private int age;
 	
+	//생성자
 	public Member(String name, int age) {
 		this.name=name;
 		this.age=age;
