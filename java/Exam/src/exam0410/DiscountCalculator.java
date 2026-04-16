@@ -1,4 +1,4 @@
-package exma0410;
+package exam0410;
 
 public class DiscountCalculator {
 	   public static void main(String[] args) {

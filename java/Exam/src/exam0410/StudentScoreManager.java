@@ -1,4 +1,4 @@
-package exma0410;
+package exam0410;
 
 import java.util.Scanner;
 
