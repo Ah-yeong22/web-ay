@@ -1,24 +1,25 @@
-package exam_0417.ex2;
+package exam0417;
 
 public class Product {
-	private String name;
-	private int stock;
+	String name;
+	int stock;
 	
 	public Product(String name, int stock) {
 		this.name=name;
 		this.stock=stock;
-		
 	}
+	
 	public void sell(int amount) {
 		if(amount > stock) {
 			System.out.println("재고가 부족합니다. ");
-			return;
+		}else {
+			stock -= amount;
+			System.out.println("판매 완료");
 		}
-		stock -= amount;
-		System.out.println("판매 완료 ");
+		
+		
 	}
-	
 	public void printInfo() {
-		System.out.println("상품명: " + name + "재고:"+stock);
+		System.out.println("상품명:" + name + ",재고:" + stock);
 	}
 }
