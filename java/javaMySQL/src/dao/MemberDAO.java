@@ -61,4 +61,7 @@ public class MemberDAO {
 		
 	}
 	//삭제
+	public void delete() {
+		
+	}
 }
