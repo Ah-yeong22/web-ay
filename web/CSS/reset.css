@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* CSS에서 요소의 실제 크기를 계산하는 방식
+    border-box : 박스 크기를 딱 정한 크기대로 유지해주는 옵션 */
+}
+
+/* body의 기본 글꼴을 설정한다. */
+body{
+    font-family: Arial,snas-serif;
+    line-height: 1.5; 
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
