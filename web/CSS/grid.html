@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            gap: 10px;
+        }
+        .container div{
+            border: 1px solid black;
+        }
+        .menu-container{
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 16px;
+            padding: 16px;
+            background-color: #ecf0f1;
+        }
+        .sidebar{
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .content{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .row-container{
+            display: grid;
+            grid-template-rows: 100px 200px 100px 100px;
+            gap: 12px;
+            padding: 20px;
+        }
+
+        .item{
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+            border-radius: 8px;
+        }
+
+        .repeat-container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+        }
+        .minmax-container{
+            display: grid;
+            grid-template-columns: minmax(200px, 900px);
+        }
+        .auto-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,150px);
+            gap: 10px;
+        }
+        .area-container{
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 80px 300px 80px;
+            grid-template-areas:
+                "header header"
+                "aside main"
+                "footer footer";
+        }
+
+        .header{
+             grid-area: header;
+            background-color: aliceblue;
+           
+        }
+        .main{
+             grid-area: main;
+            background-color: antiquewhite;
+        }
+        .footer{
+             grid-area: footer;
+            background-color: beige;
+        }
+        .aside{
+             grid-area: aside;
+            background-color: aquamarine;
+        }
+        .area-container2{
+            display: grid;
+            padding: 10px;
+            gap: 10px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(4,100px);
+            grid-template-areas: 
+                "header header header"
+                "main . ."
+                "main . aside"
+                "footer footer footer";
+        }
+    </style>
+</head>
+<body>
+    <h2>열 만들기 grid-template-columns</h2>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <hr>
+
+    <h2>fraction으로 크기 정하기</h2>
+    <div class="menu-container">
+        <aside class="sidebar">
+            <h2>side bar</h2>
+            <p>메뉴 혹은 네비게이션이 들어간다.</p>
+        </aside>
+
+        <main class="content">
+            <h2>content</h2>
+            <p>남은 공간을 전부 차지하는 영역이다.</p>
+            <p>본문 내용이 여기에 들어간다.</p>
+        </main>
+    </div>
+
+    <h2>행 만들기 grid-template-rows</h2>
+    <div class="row-container">
+        <div class="item">1번</div>
+        <div class="item">2번</div>
+        <div class="item">3번</div>
+        <div class="item">4번</div>
+    </div>
+
+    <hr>
+    <h2> 반복 생성 repeat</h2>
+    <div class="repeat-container">
+        <div class="item">1번</div>
+        <div class="item">2번</div>
+        <div class="item">3번</div>
+        <div class="item">4번</div>
+    </div>
+
+    <hr>
+    <h2>최소값 최대값 지정 minmax</h2>
+     <div class="minmax-container">
+        <div class="item">minmax</div>
+    </div>
+
+    <hr>
+    <h2>auto-fill / auto-out</h2>
+    <div class="auto-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <hr>
+    <h2>grid-template-area</h2>
+    <div class="area-container">
+        <header class="header">header영역</header>
+        <aside class="aside">aside 영역</aside>
+        <main class="main">main 영역</main>
+        <footer class="footer">footer 영역</footer>
+    </div>
+
+    <br>
+    <h2>grid-template-area</h2>
+    <div class="area-container2">
+        <header class="header">header영역</header>
+        <aside class="aside">aside 영역</aside>
+        <main class="main">main 영역</main>
+        <footer class="footer">footer 영역</footer>
+    </div>
+</body>
+</html>
