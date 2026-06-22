@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="box.css">
+    <style>
+        .flex{
+            display: flex;
+        }
+
+        .row{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .rowReverse{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .column{
+            display: flex;
+            flex-direction: column;
+        }
+
+          .columnReverse{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .wrap{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-start{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .flex-end{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .flex-center{
+            display: flex;
+            justify-content: center;
+        }
+        .space-between{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .space-around{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .stretch{
+            display: flex;
+            align-items: stretch;
+        }
+    </style>
+</head>
+<body>
+    <h2>display : flex</h2>
+    <section class="flex">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+    <h2>felx-direction</h2>
+    <section class="row">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+     <section class="rowReverse">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+     <section class="column">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+    <section class="columnReverse">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+    <h2>flex-wrap</h2>
+    <section class="wrap">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+
+    <h2>justify-content</h2>
+    <section class="flex-start">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+
+    <section class="flex-end">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+
+    <section class="flex-center">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+
+    <section class="space-between">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+
+    <section class="space-around">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+
+    <h2>align-items</h2>
+    <section class="stretch">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+        <div class="box d">04</div>
+        <div class="box e">05</div>
+        <div class="box f">06</div>
+    </section>
+</body>
+</html>
