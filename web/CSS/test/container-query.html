@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .outer{
+            border: 2px solid black;
+            margin: 20px;
+            padding: 10px;
+        }
+        .inner{
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: white;
+        }
+        @media(min-width:700px){
+            .inner{
+                background-color: red;
+                font-size: 22px;
+            }
+        }
+        .outer{
+            container-type: inline-size;
+        }
+
+        @container(min-width:500px){
+            .inner{
+                background-color: tan;
+                font-size: 20px;
+            }
+        }
+
+        .layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        .area{
+            padding: 20px;
+            background-color: #eee;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">컨테이터 쿼리 vs 미디어 쿼리</div>
+    </div>
+    <hr>
+    <div class="layout">
+        <section class="area narrow">
+            <div class="card-wrap">
+                <article class="card">
+                    <image src="../img/dog/jpg">
+                        <div class="card-content">
+                            <h2>무선 키보드</h2>
+                            <p>조용한 타건감과 긴 배터리 시간을 제공하는 키보드</p>
+                            <button>구매하기</button>
+                        </div>
+                    </image>
+                </article>
+            </div>
+
+            <div class="card-wrap">
+                <article class="card">
+                    <image src="../img/dog/jpg">
+                        <div class="card-content">
+                            <h2>무선 키보드</h2>
+                            <p>조용한 타건감과 긴 배터리 시간을 제공하는 키보드</p>
+                            <button>구매하기</button>
+                        </div>
+                    </image>
+                </article>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

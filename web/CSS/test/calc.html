@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        aside{
+            width: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+        }
+        .main1{
+            border: 1px solid black;
+            width : calc(100% - 200px);
+        }
+        header{
+            height: 80px;
+            background-color: red;
+        }
+        .main2{
+            background-color: beige;
+            height: calc(100% - 80px);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside>메뉴</aside>
+        <main class="main1">본문</main>
+    </div>
+    <hr>
+    <div class="container">
+        <header>헤더</header>
+        <main class="main2">내용</main>
+    </div>
+</body>
+</html>
