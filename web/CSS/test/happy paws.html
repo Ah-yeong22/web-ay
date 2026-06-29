@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            gap: 30px;
+            
+        }
+        .sidebar{
+            width: 150px;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+       .sidebar h2{
+        color: rgb(255, 187, 0);
+       }
+        .title{
+            margin: 10px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0px 0px 2px  rgba(0,0,0,0.5);
+        }
+        .sidebar p:hover{
+            color: rgb(255, 187, 0);
+
+        }
+        main{
+            flex: 1;
+        }
+        .box{
+            flex: 1;
+            margin: 10px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0px 0px 2px  rgba(0,0,0,0.5);
+            
+        }
+        .Emergency{
+    flex: 1;
+    margin: 10px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+
+    animation: move 1s infinite alternate;
+}
+        .now{
+            display: flex;
+        }
+        .box p{
+            margin: 0;
+            font-weight: bold;
+        }
+        .box .num{
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+
+         .table{
+            margin: 10px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding:  10px;
+            box-shadow: 0px 0px 2px  rgba(0,0,0,0.5);
+        }
+        table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+table, th, td{
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+th, td{
+    padding: 10px;
+}
+.table h4{
+    margin: 5px 0px;
+}
+th{
+    background-color: #b8b8b8;
+}
+.list{
+    display: flex;
+}
+footer{
+    text-align: center;
+}
+
+.box:hover{
+    transform: translateY(-10px);
+}
+.title:hover{
+    transform: translateY(-10px);
+}
+.table:hover{
+    transform: translateY(-10px);
+}
+@keyframes move{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(10px);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <aside class="sidebar">
+        <h2>happy paws</h2>
+        <p>대시보드</p>
+        <p>입양 관리</p>
+        <p>보호 동물</p>
+        <p>봉사 일정</p>
+        <p>후원 현황</p>
+    </aside>
+    <main>
+        <section class="title">
+            <h2>입양 현황 대시보드</h2>
+            <p>오늘의 보호소 운영 현황을 한눈에 확인합니다.</p>
+        </section>
+
+        <section class="now">
+            <div class="box">
+                <p>보호중</p>
+                <p class="num">28</p>
+            </div>
+            <div class="box">
+                <p>봉사 신청</p>
+                <p class="num">18</p>
+            </div>
+            <div class="box">
+                <p>입양 완료</p>
+                <p class="num">12</p>
+            </div>
+            <div class="box">
+                <p>치료중</p>
+                <p class="num">5</p>
+            </div>
+        </section>
+
+        <section class="table">
+            <h4>보호 동물 상태표</h4>
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <th>종류</th>
+                    <th>상태</th>
+                    <th>담당자</th>
+                </tr>
+               <tr>
+                <td>초코</td>
+                <td>강아지</td>
+                <td>입양 대기</td>
+                <td>김보호</td>
+               </tr>
+               <tr>
+                <td>나비</td>
+                <td>고양이</td>
+                <td>치료중</td>
+                <td>이관리</td>
+               </tr>
+               <tr>
+                <td>두부</td>
+                <td>강아지</td>
+                <td>상담 예약</td>
+                <td>박입양</td>
+               </tr>
+               <tr>
+                <td>콩이</td>
+                <td>고양이</td>
+                <td>입양 이완료</td>
+                <td>최상담</td>
+               </tr>
+            </table>
+        </section>
+        <section class="list">
+            <div class="Emergency">
+                <h4>긴급 구조 알림</h4>
+                <ul>
+                    <li>오늘 구조 요청 3건 </li>
+                    <li>치료가 필요한 동물 2마리 확인 </li>
+                    <li>임시 보호처 1곳 필요 </li>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>봉사 일정</h4>
+                <ul>
+                    <li>오전 10:00 산책 </li>
+                    <li>오후 2:00 보호소 청소 </li>
+                    <li>오후 5:00 사료 정리 </li>
+                </ul>
+            </div>
+        </section>
+        
+            <div class="box">
+                <footer>
+                &copy; 2026 happy paws Animal shelter dashboard
+                </footer>
+            </div>
+        
+    </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Preview</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    border-bottom:1px solid #444;
+}
+
+.logo{
+    color:red;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:red;
+    transform:scale(1.12);
+}
+
+/* Main */
+main{
+    display:flex;
+    justify-content:center;
+    margin-top:50px;
+}
+
+.movie-main{
+    display:flex;
+    width:80%;
+    gap:50px;
+    align-items:center;
+}
+
+/* Poster */
+.poster{
+    width:42%;
+    height:520px;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.5);
+}
+
+.poster img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.3s;
+}
+
+.poster img:hover{
+    opacity:.8;
+    transform:scale(1.03);
+}
+
+/* Movie Info */
+.info{
+    width:58%;
+    color:white;
+}
+
+.best{
+    background:red;
+    color:white;
+    border:none;
+    border-radius:20px;
+    padding:8px 15px;
+    margin-bottom:20px;
+}
+
+.info h2{
+    font-size:45px;
+    margin:20px 0;
+}
+
+.info p{
+    color:#ccc;
+    line-height:1.8;
+}
+
+.information{
+    margin:25px 0;
+    padding:15px;
+    border:1px solid #444;
+    border-radius:12px;
+    background:#2b2b2b;
+    transition:.3s;
+}
+
+.information:hover{
+    border-color:red;
+    box-shadow:0 5px 15px rgba(0,0,0,.5);
+    transform:translateX(8px);
+}
+
+.reservation,
+.detail{
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.reservation{
+    background:white;
+    color:black;
+}
+
+.detail{
+    background:#ddd;
+    color:black;
+}
+
+.reservation:hover,
+.detail:hover{
+    background:red;
+    color:white;
+    transform:scale(1.08);
+    box-shadow:0 5px 15px rgba(0,0,0,.5);
+}
+
+/* Recommend */
+.recommend{
+    width:80%;
+    margin:60px auto;
+}
+
+.recommend h2{
+    color:white;
+    margin-bottom:20px;
+}
+
+.recommend-section{
+    display:flex;
+    gap:20px;
+}
+
+.box{
+    flex:1;
+    background:#2f2f2f;
+    color:white;
+    border:2px solid transparent;
+    border-radius:10px;
+    padding:20px;
+    transition:.3s;
+}
+
+.box h4{
+    margin-bottom:15px;
+}
+
+.box p{
+    color:#ccc;
+    line-height:1.6;
+}
+
+.box:hover{
+    background:#3b3b3b;
+    border-color:red;
+    transform:translateY(-8px);
+}
+
+/* Footer */
+footer{
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-top:1px solid #444;
+    margin-top:60px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+    .movie-main{
+        flex-direction:column;
+        width:90%;
+    }
+
+    .poster,
+    .info{
+        width:100%;
+    }
+
+    .recommend{
+        width:90%;
+    }
+
+    .recommend-section{
+        flex-direction:column;
+    }
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+}
+</style>
+
+</head>
+ 
+
+<header>
+    <div class="logo">Movie Preview</div>
+
+    <nav class="menu">
+        <a href="#">상영작</a>
+        <a href="#">예매</a>
+        <a href="#">이벤트</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="movie-main">
+
+    <div class="poster">
+        <img src="https://picsum.photos/500/700?movie-main" alt="영화 포스터">
+    </div>
+
+    <div class="info">
+
+        <button class="best">이번 주 추천작</button>
+   <h2>Shadow City</h2>
+
+        <p>
+            어두운 도시를 배경으로 숨겨진 진실을 추적하는 액션 스릴러 영화입니다.<br>
+            빠른 전개와 긴장감 있는 장면을 통해 관객에게 강한 몰입감을 제공합니다.
+        </p>
+
+        <div class="information">
+            <p>장르 : 액션 / 스릴러</p>
+            <p>상영 시간 : 128분</p>
+            <p>관람 등급 : 15세 이상 관람가</p>
+        </div>
+
+        <button class="reservation">예매하기</button>
+        <button class="detail">상세정보</button>
+
+    </div>
+
+</section>
+
+</main>
+
+<section class="recommend">
+
+    <h2>함께 보면 좋은 영화</h2>
+
+    <section class="recommend-section">
+
+        <div class="box">
+            <h4>액션 무비</h4>
+            <p>화려한 전투 장면과 빠른 전개가 돋보이는 영화입니다.</p>
+        </div>
+
+        <div class="box">
+            <h4>로맨스 무비</h4>
+            <p>따뜻한 감성과 인물 간의 관계를 중심으로 전개됩니다.</p>
+        </div>
+
+        <div class="box">
+            <h4>애니메이션 무비</h4>
+            <p>상상력 있는 화면과 가족이 함께 보기 좋은 이야기를 담았습니다.</p>
+        </div>
+
+    </section>
+
+</section>
+
+<footer>
+    © 2026 Movie Preview
+</footer>
+
+</body>
+</html>
