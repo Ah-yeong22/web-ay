@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function add(x,y){
+            return x +y;
+        }
+        const add=function(x,y){return x+y;};
+        add(10,7);
+
+        const add = (x,y) =>{return x +y;}
+
+        const student=() => ({name :'홍길동'})
+
+        const welcome = () => {
+            document.getElementById("result").innerText="환영합니다."
+        }
+
+        const power = (x,n=2)=>{return x **n;}
+
+        const doubled=[1,2,3].map(x=> x*2);
+        const enens=[1,2,3,4].filter(x => x%2 === 0);
+
+        const calculate = (num1, num2, operation) => {
+            let result = operation(num1,num2);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="welcome()">환영하기</button>
+</body>
+</html>

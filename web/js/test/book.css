@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #222;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+.container {
+  width: min(900px, calc(100% - 32px));
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+#keyword {
+  flex: 1;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cfd6df;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#searchBtn {
+  width: 100px;
+  border: 0;
+  border-radius: 8px;
+  background: #1f4c8f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#message {
+  min-height: 24px;
+  margin: 14px 0;
+  color: #d63434;
+  text-align: center;
+  font-size: 14px;
+}
+
+#bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  background: white;
+  border: 1px solid #e1e6eb;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.book-card h2 {
+  margin: 0 0 14px;
+  color: #183b6c;
+  font-size: 18px;
+}
+
+.book-card p {
+  margin: 7px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.label {
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .search-box {
+    flex-direction: column;
+  }
+
+  #searchBtn {
+    width: 100%;
+    height: 48px;
+  }
+}
