@@ -1347,24 +1347,37 @@ export default function TravelChecklistApp() {
   }
 
   function confirmDelete(message: string, onDelete: () => void) {
-    Alert.alert("항목 삭제", message, [
-      { text: "취소", style: "cancel" },
-      { text: "삭제", style: "destructive", onPress: onDelete },
-    ]);
+    // React Native의 Alert.alert은 웹에서 동작이 일정하지 않으므로
+    // 기존 그룹 삭제와 동일하게 웹에서는 window.confirm을 사용한다.
+    confirmGroupAction("항목 삭제", message, "삭제", onDelete);
   }
 
   function deleteTask(taskId: string, message: string) {
     confirmDelete(message, () => {
       void (async () => {
         if (!supabase || !authUserId) return;
-        const { error } = await supabase
+
+        const { data, error } = await supabase
           .from("checklist_items")
           .delete()
-          .eq("id", taskId);
+          .eq("id", taskId)
+          .select("id");
+
         if (error) {
           showDbError("항목 삭제 실패", error);
           return;
         }
+
+        // RLS 정책에 의해 DELETE가 허용되지 않으면 오류 없이 0건이
+        // 반환될 수 있으므로 사용자가 원인을 알 수 있게 안내한다.
+        if (!data || data.length === 0) {
+          Alert.alert(
+            "항목 삭제 실패",
+            "삭제 권한이 없거나 이미 삭제된 항목입니다. Supabase의 checklist_items DELETE 정책을 확인해 주세요.",
+          );
+          return;
+        }
+
         await loadGroups(authUserId);
       })();
     });

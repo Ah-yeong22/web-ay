@@ -81,7 +81,7 @@ async function getWeather() {
 
     weatherBox.innerHTML = `
       <section class="weather-card">
-        <h2>${selectedCity.name} 현재 날씨</h2>
+        <h2>${selectedCity.name}</h2>
         <p><span class="label">현재 기온</span>${temperature}℃</p>
         <p><span class="label">풍속</span>${windspeed} km/h</p>
         <p><span class="label">날씨 코드</span>${weatherCode}</p>
