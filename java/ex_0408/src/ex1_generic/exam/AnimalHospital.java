@@ -4,9 +4,11 @@ public class AnimalHospital<T extends Animal> {
 	private T animal;
 	
 	public AnimalHospital(T animal) {
-		this.animal=animal;
+		this.animal = animal;
 	}
+	
 	public void treat() {
 		animal.move();
 	}
+
 }

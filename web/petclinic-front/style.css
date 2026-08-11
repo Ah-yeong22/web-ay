@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #f3f5f7;
+    font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    font-size: 14px;
+}
+
+input,
+select {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #2878d4;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.button-group,
+.search-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 8px;
+    border-bottom: 10
+    1px solid #0a0000;
+    text-align: center;
+    color: white;
+}
+
+th {
+    background-color: #0e0404;
+    border: 1px solid white;
+    color: white;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.delete-button {
+    background-color: #d33c3c;
+}
+
+.edit-button {
+    background-color: #e59400;
+}
+
+.status-box {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-area {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 12px;
+    }
+    .list-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.list-title h2 {
+    margin: 0;
+}
+}

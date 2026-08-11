@@ -3,26 +3,26 @@ package ex1_exception.customException;
 import java.util.Scanner;
 
 public class Main {
-
-	public static void main(String[] args) throws IllegalArgumentException{
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Converter2 converter = new Converter2();
+		Converter converter = new Converter();
 		OrderService os = new OrderService();
 		
 		try {
-			System.out.println("가격을 입력: ");
+			System.out.print("상품 가격 입력 : ");
 			String priceStr = sc.next();
-			System.out.println("수량을 입력: ");
+			
+			System.out.print("상품 수량 입력 : ");
 			String quantityStr = sc.next();
 			
-			int price = converter.str(priceStr);
-			int quantity = converter.str(priceStr);
+			int price = converter.toInt(priceStr);
+			int quantity = converter.toInt(quantityStr);
 			
-			int total = os.total(price, quantity);
-			System.out.println(total);
-				
+			int total = os.calculateTotal(price, quantity);
+			
+			System.out.println("총 금액 : " + total);
 		} catch (Exception e) {
-			System.out.println("숫자변환 실패");
-			}
+			System.out.println(e.getMessage());
+		}
 	}
 }

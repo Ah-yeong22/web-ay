@@ -6,35 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <table> ~ </table> 테이블을 만들어주는 태그
+     <tr> : 행을 만들어주는 태그
+     <td> : 열을 만들어주는 태그
+     <th> : 테이블 헤더로 테이블 각 열을 대표하는 셀-->
+
     <table border="1">
-        <tr>
+        <tr> 
             <td>1행 1열</td>
         </tr>
     </table>
 
-    <!-- hr : 구분선 -->
-    <hr> 
+    <hr>
 
     <table border="1">
-        <tr>
+        <tr> 
             <td>1행 1열</td>
             <td>1행 2열</td>
         </tr>
     </table>
 
-    <hr> 
+    <hr>
 
     <table border="1">
-        <tr>
+        <tr> 
             <td>1행 1열</td>
         </tr>
-        <tr>
+        <tr> 
             <td>2행 1열</td>
         </tr>
     </table>
 
     <hr>
-     <table border="1">
+
+    <!-- 2행 2열짜리 테이블 만들기 -->
+    <table border = "1">
+        <caption> 테이블 제목 </caption>
         <tr>
             <td>1행 1열</td>
             <td>1행 2열</td>
@@ -44,10 +51,9 @@
             <td>2행 2열</td>
         </tr>
     </table>
-
     <hr>
     <!-- 열 합치기 -->
-     <table border="1">
+    <table border="1">
         <tr>
             <td colspan="3" align="center">메뉴판</td>
         </tr>
@@ -56,47 +62,98 @@
             <td>짬뽕</td>
             <td>탕수육</td>
         </tr>
-        
-        <hr>
-        <table border="1">
-            <tr>
-                <td rowspan="2">메뉴판</td>
-                <td>짜장</td>
-            </tr>
-            <tr>
-                <td>짬뽕</td>
-            </tr>
-        </table>
+    </table>
+    <hr>
+    <!-- 행 합치기 -->
+    <table border="1">
+        <tr>
+            <td rowspan="2">메뉴판</td>
+            <td>짜장</td>
+        </tr>
+        <tr>
+            <td>짬뽕</td>
+        </tr>
+    </table>
+    <hr>
+    <table border="1">
+        <caption>주요 SNS 서비스별 이용률(%)</caption>
+        <tr>
+            <th></th>
+            <th>페이스북</th>
+            <th>카카오스토리</th>
+            <th>밴드</th>
+            <th>인스타그램</th>
+            <th>트위터</th>
+        </tr>
+        <tr>
+            <th>2015</th>
+            <td>77.1</td>
+            <td>58.3</td>
+            <td>32.4</td>
+            <td>16.7</td>
+            <td>22.1</td>
+        </tr>
+        <tr>
+            <th>2016</th>
+            <td>73.8</td>
+            <td>51.3</td>
+            <td>40.1</td>
+            <td>28.1</td>
+            <td>14.6</td>
+        </tr>
+    </table>
 
-        <hr>
-        <table border="1">
-            <caption>주요 SNS 서비스별 이용률(%)</caption>
-            <tr>
-                <td></td>
-                <td>페이스북</td>
-                <td>카카오스토리</td>
-                <td>밴드</td>
-                <td>인스타그램</td>
-                <td>트위터</td>
-            </tr>
-            <tr>
-                <td>2015년</td>
-                <td>77.1</td>
-                <td>58.3</td>
-                <td>32.4</td>
-                <td>16.7</td>
-                <td>22.1</td>
-            </tr>
-            <tr>
-                <td>2016년</td>
-                <td>73.8</td>
-                <td>51.0</td>
-                <td>32.4</td>
-                <td>16.7</td>
-                <td>14.7</td>
-            </tr>
-        </table>
+    <hr>
 
-     </table>
+    <table border="1">
+        <!-- 표의 제목 부분 
+         보통 컬럼명을 th를 이용해서 작성한다.-->
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>과목</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+
+        <!-- 실제 데이터가 들어가는 영역 -->
+        <tbody>
+            <tr>
+                <td>김철수</td>
+                <td>HTML</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>이영희</td>
+                <td>CSS</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>박민수</td>
+                <td>JS</td>
+                <td>70</td>
+            </tr>
+        </tbody>
+
+        <!-- 표의 맨 아래 요약 정보를 작성한다.
+         합계, 평균, 결과, 통계 -->
+        <tfoot>
+            <td colspan="2">평균 점수</td>
+            <td>85</td>
+        </tfoot>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

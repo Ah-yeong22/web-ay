@@ -1,101 +1,100 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>상품 카드</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing : border-box;
+        }
 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        body{
+            margin : 0;
+            padding : 60px;
+            font-family : sans-serif;
+            background-color : #f5f6fa;
+        }
 
-    body{
-        background: #f5f6fa;
-        padding: 30px;
-    }
+        .card{
+            width : 300px;
+            background : white;
+            border-radius : 16px;
+            overflow:hidden;
+            box-shadow : 0 4px 12px rgba(0,0,0,0.12);
+            transition : 
+                transform 0.3s ease,
+                box-shadow 0.3s ease
+        }
 
-    .container{
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+        .card__image-box{
+            height : 180px;
+            overflow: hidden;
+        }
 
-    .card{
-        width: 300px;
-        background: white;
-        border-radius: 12px;
-        overflow: hidden; /* 이미지가 카드 밖으로 나가지 않게 */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        transition: 0.3s;
-    }
+        .card__image{
+            width : 100%;
+            height : 100%;
+            object-fit: cover;
 
-    .image-box{
-        overflow: hidden;
-    }
+            transition : transform 0.4s ease;
+        }
 
-    .image-box img{
-        width: 100%;
-        display: block;
-        transition: 0.4s;
-    }
+        .card:hover .card__image{
+            transform: scale(1.08);
+        }
 
-    .content{
-        padding: 20px;
-    }
+        .card__content{
+            padding : 20px;
+        }
 
-    .content h2{
-        margin-bottom: 10px;
-    }
+        .card__title{
+            margin : 0 0 10px;
+            font-size : 22px;
+        }
 
-    .content p{
-        margin-bottom: 15px;
-    }
+        .card__text{
+            margin : 0 0 20px;
+            color : #555;
+            line-height : 1.5;
+        }
 
-    button{
-        padding: 10px;
-        border: none;
-        background: black;
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .card__button{
+            padding : 10px 18px;
+            border : none;
+            border-radius : 8px;
+            background : #333;
+            color : white;
+            cursor : pointer;
+            transition : background-color 0.3s ease;
+        }
 
-    /* Hover 효과 */
-    .card:hover{
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
+        .card:hover{
+            transform : translateY(-10px);
+            box-shadow : 0 14px 30px rgba(0,0,0,0.25);
+        }
 
-    .card:hover img{
-        transform: scale(1.08);
-    }
-
-    .card:hover button{
-        background: blue;
-    }
-</style>
+        .card:hover .card__button{
+            background-color: royalblue;
+        }
+        
+    </style>
 </head>
 <body>
-
-<div class="container">
-
     <div class="card">
-        <div class="image-box">
-            <img src="https://picsum.photos/300/200?1" alt="상품1">
+        <div class="card__image-box">
+            <img class="card__image"
+            src="https://picsum.photos/400/300"
+            alt="상품 이미지">
         </div>
-        <div class="content">
-            <h2>프리미엄 상품</h2>
-            <p>마우스를 올리면 카드와 이미지가 부드럽게 움직입니다.</p>
-            <button>구매하기</button>
+
+        <div class="card__content">
+            <h2 class="card__title">프리미엄 상품</h2>
+            <p class="card__text">
+                마우스를 올리면 카드와 이미지가 부드럽게 움직입니다.
+            </p>
+            <button class="card__button">구매하기</button>
         </div>
     </div>
-
-</div>
-
 </body>
 </html>

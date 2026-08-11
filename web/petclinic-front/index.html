@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>동물병원 예약 관리</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>동물병원 예약 관리</h1>
+
+        <!-- 예약 등록 -->
+        <section class="card">
+
+            <h2>예약 등록</h2>
+
+            <form id="reservationForm">
+
+                <input type="hidden" id="reservationId">
+
+                <div class="form-grid">
+
+                    <label>
+                        반려동물 이름
+                        <input
+                            type="text"
+                            id="petName"
+                            placeholder="반려동물 이름"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        보호자 이름
+                        <input
+                            type="text"
+                            id="ownerName"
+                            placeholder="보호자 이름"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        동물 종류
+                        <select id="animalType" required>
+                            <option value="">선택</option>
+                            <option value="강아지">강아지</option>
+                            <option value="고양이">고양이</option>
+                            <option value="토끼">토끼</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        담당 수의사
+                        <input
+                            type="text"
+                            id="doctorName"
+                            placeholder="담당 수의사"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        예약 날짜
+                        <input
+                            type="date"
+                            id="reservationDate"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        예약 상태
+                        <select id="status" required>
+                            <option value="">선택</option>
+                            <option value="예약">예약</option>
+                            <option value="진료완료">진료완료</option>
+                            <option value="예약취소">예약취소</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        예상 진료비
+                        <input
+                            type="number"
+                            id="price"
+                            min="0"
+                            placeholder="예상 진료비"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">저장</button>
+
+                    <button type="button" id="cancelEditButton">
+                        취소
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- 예약 목록 -->
+        <section class="card">
+
+            <div class="list-title">
+                <h2>예약 목록</h2>
+
+                <button type="button" id="reloadButton">
+                    전체 조회
+                </button>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>반려동물</th>
+                        <th>보호자</th>
+                        <th>동물 종류</th>
+                        <th>수의사</th>
+                        <th>예약일</th>
+                        <th>상태</th>
+                        <th>진료비</th>
+                        <th>관리</th>
+                    </tr>
+                </thead>
+
+                <tbody id="reservationTableBody">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

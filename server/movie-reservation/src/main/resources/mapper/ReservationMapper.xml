@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.korea.movie_reservation.mapper.ReservationMapper">
+
+    <insert id="insertReservation"
+            parameterType="ReservationVO"
+            useGeneratedKeys="true"
+            keyProperty="reservationId">
+
+        INSERT INTO reservation (
+            customer_name,
+            movie_id,
+            seat_number,
+            ticket_count,
+            reservation_status
+        )
+        VALUES (
+            #{customerName},
+            #{movieId},
+            #{seatNumber},
+            #{ticketCount},
+            #{reservationStatus}
+        )
+
+    </insert>
+
+    <update id="updateReservation"
+            parameterType="ReservationVO">
+
+        UPDATE reservation
+        SET
+            reservation_date = #{reservationDate},
+            seat_number = #{seatNumber},
+            ticket_count = #{ticketCount},
+            reservation_status = #{reservationStatus}
+        WHERE reservation_id = #{reservationId}
+
+    </update>
+
+    <select id="findReservationDetails"
+            resultType="ReservationVO">
+
+        SELECT
+            r.reservation_id,
+            r.customer_name,
+            r.movie_id,
+            m.movie_title,
+            m.movie_genre,
+            r.reservation_date,
+            r.seat_number,
+            r.ticket_count,
+            r.reservation_status,
+            m.ticket_price,
+            m.ticket_price * r.ticket_count AS total_price
+        FROM reservation r
+        INNER JOIN movie m
+            ON r.movie_id = m.movie_id
+        ORDER BY r.reservation_id DESC
+
+    </select>
+
+</mapper>

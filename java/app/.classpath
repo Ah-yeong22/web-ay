@@ -6,12 +6,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/member_module">
+	<classpathentry combineaccessrules="false" kind="src" path="/service">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/service.module">
+	<classpathentry combineaccessrules="false" kind="src" path="/member">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

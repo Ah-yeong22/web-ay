@@ -1,5 +1,5 @@
 package ex2_package.kumho;
 
-public class AllseasonTire {
+public class AllSeasonTire {
 
 }

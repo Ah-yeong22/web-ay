@@ -1,7 +1,6 @@
 package ex2_object;
 
 public class ToStringExample {
-
 	public static void main(String[] args) {
 		Object obj = new Object();
 		

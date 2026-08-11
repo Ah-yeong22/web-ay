@@ -1,26 +1,38 @@
 package ex2_method;
 
+import java.util.Arrays;
+
 public class MethodMain {
 	public static void main(String[] args) {
+		//클래스 안에 정의된 메서드 사용하기
+		
+		//1. 객체가 정의되어야 한다.
 		MethodExample m = new MethodExample();
+		
+		//2. 객체를 통해서 메서드를 호출해야 한다.
+		//변수명.메서드명();
 		m.printInfo();
 		
-		int result = m.add(10,7);
+		//메서드의 호출
+		int result = m.add(10, 7);
 		System.out.println(result);
 		
-		double result2 = m.circleArea(10);
-		System.out.println(result2);
+		System.out.println(m.add(2, 4));
 		
-		m.circleRound(5); //return이 없을때
+		//메서드의 호출
+		m.circleArea(5);
 		
-		int [] arr = {1,2,3,4};
-		m.countEven(arr);
-		System.out.println(m.countEven(arr));
+		m.circleRound(5);
 		
-		//return이 있을때
-		int result3 = m.countChar("apple", 'a');
-		System.out.println(result3);
+		int result2 = m.countChar("apple", 'p');
+		System.out.println("p의 개수 : " + result2);
 		
-		
-		}
+	}
 }
+
+
+
+
+
+
+

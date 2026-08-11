@@ -1,6 +1,6 @@
 package ex6_sealed;
 
-public sealed class Person permits Employee, Manager {
+public sealed class Person permits Employee, Manager{
 
 	String name;
 	

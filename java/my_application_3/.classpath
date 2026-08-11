@@ -6,12 +6,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/adminn/Desktop/web-ay/java/my_module_b/dist/my_lib_b.jar">
+	<classpathentry kind="lib" path="C:/Users/adminn/Desktop/web-lhj/java/my_module_a/dist/my_module_a.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/adminn/Desktop/web-ay/java/my_module_a/dist/my_lib_a.jar">
+	<classpathentry kind="lib" path="C:/Users/adminn/Desktop/web-lhj/java/my_module_b/dist/my_module_b.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

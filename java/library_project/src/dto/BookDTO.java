@@ -6,10 +6,19 @@ public class BookDTO {
 	private String title;
 	private String author;
 	private int stock;
+	
+	public BookDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public BookDTO(String title, String author, int stock) {
+		this.title = title;
+		this.author = author;
+		this.stock = stock;
+	}
+	
 
-	public BookDTO(int bookId, String title,
-			String author, int stock) {
-
+	public BookDTO(int bookId, String title, String author, int stock) {
 		this.bookId = bookId;
 		this.title = title;
 		this.author = author;
@@ -47,4 +56,10 @@ public class BookDTO {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+	
+	
+	
+
+	
+	
 }

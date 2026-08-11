@@ -1,40 +1,41 @@
 package ex1_class;
 
-
 public class StudentMain {
 	public static void main(String[] args) {
+		Student minsu = new Student();
+		minsu.name = "민수";
+		minsu.age = 20;
+		minsu.score = 80;
 		
-
-		Student a = new Student();
-		a.name = "홍길동" ;
-		a.age = 10;
-		a.score = 70;
-
-		Student a2 = new Student();
-		a2.name = "영희" ;
-		a2.age = 12;
-		a2.score = 80;
-
-		Student a3 = new Student();
-		a3.name = "철수" ;
-		a3.age = 13;
-		a3.score = 100;
+		Student gildong = new Student();
+		gildong.name = "길동";
+		gildong.age = 21;
+		gildong.score = 45;
+		
+		Student yonghee = new Student();
+		yonghee.name = "영희";
+		yonghee.age = 30;
+		yonghee.score = 90;
 		
 		//배열에는 같은 타입의 데이터만 넣을 수 있다.
-		//데이터의 타입은 배열 앞에 명시한다. 
-		Student[] students = {a, a2, a3};
+		//데이터의 타입은 배열 앞에 명시한다.
+		Student[] students = {minsu, gildong, yonghee};
 		
 		System.out.println(students[0].name);
 		
-		//배열에 들어있는 내용을 모두 출력하기 
-		for(int i=0; i<students.length; i++) {
-			System.out.println(students[i].name);
-			System.out.println(students[i].age);
-			System.out.println(students[i].score);
-			System.out.println("--------------------");
+		//배열에 들어있는 내용을 모두 출력하기
+		for(int i = 0; i < students.length; i++) {
+			System.out.println("이름 : " + students[i].name);
+			System.out.println("나이 : " + students[i].age);
+			System.out.println("점수 : " + students[i].score);
+			System.out.println("---------------");
 		}
+		
+		
+		
+		
+		
+		
+		
 	}
 }
-
-
-

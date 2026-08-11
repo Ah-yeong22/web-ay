@@ -15,4 +15,5 @@ public class Main {
 		C c = new C();
 		c.method();
 	}
+	
 }

@@ -1,7 +1,9 @@
 package ex1_overriding;
 
 public class Dog extends Animal{
-		public void sound() {
-			System.out.println("강아지가 멍멍");
-		}
+
+	@Override
+	public void sound() {
+		System.out.println("멍멍");
+	}
 }

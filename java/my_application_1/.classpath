@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/adminn/Desktop/web-ay/java/my_lib/dist/my_lib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/adminn/Desktop/web-lhj/java/my_lib/dist/my_lib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

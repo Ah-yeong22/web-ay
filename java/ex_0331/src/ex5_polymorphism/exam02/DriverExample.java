@@ -7,5 +7,4 @@ public class DriverExample {
 		driver.drive(new Bus());
 		driver.drive(new Taxi());
 	}
-	
 }

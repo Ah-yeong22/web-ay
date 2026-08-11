@@ -2,11 +2,10 @@ package ex1_generic.exam2;
 
 public class Main {
 	public static void main(String[] args) {
-		PaymentProcessor<Payment> p = 
-				new PaymentProcessor<Payment>(new KakaoPay());
-		p.process();
-		PaymentProcessor<Payment> p2 = new PaymentProcessor<Payment>(new CardPayment());
+		PaymentProcessor<CardPayment> p1 = new PaymentProcessor<>(new CardPayment());
+		p1.process();
+		
+		PaymentProcessor<KakaoPay> p2 = new PaymentProcessor<>(new KakaoPay());
 		p2.process();
 	}
-	
 }

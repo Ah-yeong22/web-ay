@@ -1,7 +1,6 @@
 package ex6_sealed;
 
 public class SealedExample {
-
 	public static void main(String[] args) {
 		Person p = new Person();
 		Employee e = new Employee();

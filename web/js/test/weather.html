@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="weather.css">
-    <script src="weather.js" defer></script>
+    <link href="css/weather.css" rel="stylesheet">
+    <script src="js/weather.js" defer></script>
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <h1>도시 날씨 조회</h1>
 
-        <div class="search-box">
-            <select id="cityselect">
-                <option value="">도시 선택</option>
-            </select>
+        <select id="citySelect">
+            <option value="">도시선택</option>
+            <option value="서울">서울</option>
+            <option value="부산">부산</option>
+            <option value="제주">제주</option>
+            <option value="도쿄">도쿄</option>
+            <option value="뉴욕">뉴욕</option>
+        </select>
 
-            <button id="weatherBtn">날씨 조회</button>
-        </div>
-
+        <button id="weatherBtn" disabled>날씨 조회</button>
         <p id="message"></p>
+        <div id="weatherBox">
+            도시를 선택하고 날씨를 조회하세요.
+        </div>
+    </div>
 
-        <div id="weatherBox"></div>
-    </main>
+    
 </body>
 </html>

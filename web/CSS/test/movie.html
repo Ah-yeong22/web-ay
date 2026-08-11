@@ -1,308 +1,215 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movie Preview</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 공통 스타일 */
+        *{
+            box-sizing: border-box;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body{
+            margin : 0;
+            font-family : sans-serif;
+            background: #111827;
+            color : white;
+        }
 
-body{
-    background:#000;
-    font-family:Arial, Helvetica, sans-serif;
-}
+        a {
+            color : inherit;
+            text-decoration: none;
+        }
 
-/* Header */
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 50px;
-    border-bottom:1px solid #444;
-}
+        /* 헤더 영역 */
+        header{
+            display : flex;
+            justify-content: space-between;
+            align-items: center;
 
-.logo{
-    color:red;
-    font-size:28px;
-    font-weight:bold;
-}
+            padding : 20px 50px;
+            background : #030712;
+            border-bottom : 1px solid #374151;
+        }
 
-.menu{
-    display:flex;
-    gap:30px;
-}
+        .logo{
+            font-size : 28px;
+            font-weight : bold;
+            color : #ef4444;
+        }
 
-.menu a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
+        nav{
+            display :flex;
+            gap : 30px;
+        }
 
-.menu a:hover{
-    color:red;
-    transform:scale(1.12);
-}
+        nav a{
+            display : inline-block;
+            transition : all 0.3s ease;
+        }
 
-/* Main */
-main{
-    display:flex;
-    justify-content:center;
-    margin-top:50px;
-}
+        nav a:hover{
+            color : #ef4444;
+            transform : scale(1.2);
+        }
 
-.movie-main{
-    display:flex;
-    width:80%;
-    gap:50px;
-    align-items:center;
-}
+        /* 메인 영역 */
+        .movie-main{
+            max-width : 1100px;
+            margin : 70px auto;
+            padding : 0 20px;
 
-/* Poster */
-.poster{
-    width:42%;
-    height:520px;
-    overflow:hidden;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.5);
-}
+            display : flex;
+            align-items: center;
+            gap : 50px;
 
-.poster img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.3s;
-}
+        }
 
-.poster img:hover{
-    opacity:.8;
-    transform:scale(1.03);
-}
+        .poster-box{
+            width : 42%;
+            border-radius : 18px;
+            overflow : hidden;
+            box-shadow : 0 12px 30px rgba(0,0,0,0.45);
+        }
 
-/* Movie Info */
-.info{
-    width:58%;
-    color:white;
-}
+        .poster-box img{
+            width : 100%;
+            height : 520px;
+            object-fit: cover;
+            display : block;
+        }
 
-.best{
-    background:red;
-    color:white;
-    border:none;
-    border-radius:20px;
-    padding:8px 15px;
-    margin-bottom:20px;
-}
+        .movie-info{
+            flex : 1;
+        }
 
-.info h2{
-    font-size:45px;
-    margin:20px 0;
-}
+        .badge{
+            display : inline-block;
+            padding : 8px 14px;
+            border-radius : 20px;
+            background: #ef4444;
+            color : white;
+            margin-bottom : 18px;
+        }
 
-.info p{
-    color:#ccc;
-    line-height:1.8;
-}
+        .movie-info h1{
+            margin : 0 0 20px;
+            font-size : 48px;
+        }
 
-.information{
-    margin:25px 0;
-    padding:15px;
-    border:1px solid #444;
-    border-radius:12px;
-    background:#2b2b2b;
-    transition:.3s;
-}
+        .movie-info p{
+            color : #d1f5db;
+            font-size : 18px;
+            line-height : 1.7;
+        }
 
-.information:hover{
-    border-color:red;
-    box-shadow:0 5px 15px rgba(0,0,0,.5);
-    transform:translateX(8px);
-}
+        .info-box{
+            margin : 28px 0;
+            padding : 22px;
+            border : 1px solid #374151;
+            border-radius : 14px;
+            background : #1f2937;
+        }
 
-.reservation,
-.detail{
-    padding:12px 25px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    margin-right:10px;
-    transition:.3s;
-}
+        .button-group{
+            display : flex;
+            gap : 16px;
+        }
 
-.reservation{
-    background:white;
-    color:black;
-}
+        .button-group button{
+            padding : 14px 26px;
+            border : none;
+            border-radius : 8px;
+            font-size : 16px;
+            cursor :pointer;
+        }
 
-.detail{
-    background:#ddd;
-    color:black;
-}
+        /* 영화 추천 영역 */
 
-.reservation:hover,
-.detail:hover{
-    background:red;
-    color:white;
-    transform:scale(1.08);
-    box-shadow:0 5px 15px rgba(0,0,0,.5);
-}
+        .recommend-section{
+            max-width : 1100px;
+            margin : 40px auto 80px;
+            padding : 0 20px;
+        }
 
-/* Recommend */
-.recommend{
-    width:80%;
-    margin:60px auto;
-}
+        .movie-list{
+            display : flex;
+            gap : 24px;
+        }
 
-.recommend h2{
-    color:white;
-    margin-bottom:20px;
-}
+        .small-movie{
+            flex : 1;
+            padding : 22px;
+            border-radius : 14px;
+            background : #1f2937;
+            border : 1px solid #374151;
+        }
 
-.recommend-section{
-    display:flex;
-    gap:20px;
-}
-
-.box{
-    flex:1;
-    background:#2f2f2f;
-    color:white;
-    border:2px solid transparent;
-    border-radius:10px;
-    padding:20px;
-    transition:.3s;
-}
-
-.box h4{
-    margin-bottom:15px;
-}
-
-.box p{
-    color:#ccc;
-    line-height:1.6;
-}
-
-.box:hover{
-    background:#3b3b3b;
-    border-color:red;
-    transform:translateY(-8px);
-}
-
-/* Footer */
-footer{
-    color:white;
-    text-align:center;
-    padding:25px;
-    border-top:1px solid #444;
-    margin-top:60px;
-}
-
-/* Responsive */
-@media (max-width:768px){
-
-    .movie-main{
-        flex-direction:column;
-        width:90%;
-    }
-
-    .poster,
-    .info{
-        width:100%;
-    }
-
-    .recommend{
-        width:90%;
-    }
-
-    .recommend-section{
-        flex-direction:column;
-    }
-
-    header{
-        flex-direction:column;
-        gap:20px;
-    }
-}
-</style>
-
+        /* 푸터영역 */
+        footer{
+            text-align : center;
+            padding : 30px;
+            background : #030712;
+            color : #d1d5db;
+        }
+    </style>
 </head>
- 
+<body>
+    <header>
+        <div class="logo">Movie Preview</div>
 
-<header>
-    <div class="logo">Movie Preview</div>
+        <nav>
+            <a href="#">상영작</a>
+            <a href="#">예매</a>
+            <a href="#">이벤트</a>
+        </nav>
+    </header>
 
-    <nav class="menu">
-        <a href="#">상영작</a>
-        <a href="#">예매</a>
-        <a href="#">이벤트</a>
-    </nav>
-</header>
+    <main>
+        <section class="movie-main">
+            <div class="poster-box">
+                <img src="https://picsum.photos/500/700?movie-main" alt="영화 포스터 이미지">
+            </div>
 
-<main>
+            <div class="movie-info">
+                <span class="badge">이번 주 추천작</span>
+                <h1> Shadow City</h1>
+                <p>어두운 도시를 배경으로 숨겨진 진실을 추적하는 액션 스릴러</p>
 
-<section class="movie-main">
+                <div class="info-box">
+                    <p><strong>장르:</strong> 액션 /스릴러</p>
+                    <p><strong>상영 시간:</strong> 128분</p>
+                    <p><strong>관람 등급:</strong> 15세 이상 관람가</p>
+                </div>
 
-    <div class="poster">
-        <img src="https://picsum.photos/500/700?movie-main" alt="영화 포스터">
-    </div>
+                <div class="button-group">
+                    <button class="primary-btn">예매하기</button>
+                    <button class="secondary-btn">상세정보</button>
+                </div>
+            </div>
+        </section>
+        <section class="recommend-section">
+            <h2>함께 보면 좋은 영화</h2>
+            <div class="movie-list">
+                <div class="small-movie">
+                    <h3>액션 영화</h3>
+                    <p>화려한 전투 장면과 빠른 전개가 돋보이는 영화</p>
+                </div>
 
-    <div class="info">
+                <div class="small-movie">
+                    <h3>액션 영화</h3>
+                    <p>화려한 전투 장면과 빠른 전개가 돋보이는 영화</p>
+                </div>
 
-        <button class="best">이번 주 추천작</button>
-   <h2>Shadow City</h2>
+                <div class="small-movie">
+                    <h3>액션 영화</h3>
+                    <p>화려한 전투 장면과 빠른 전개가 돋보이는 영화</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <p>
-            어두운 도시를 배경으로 숨겨진 진실을 추적하는 액션 스릴러 영화입니다.<br>
-            빠른 전개와 긴장감 있는 장면을 통해 관객에게 강한 몰입감을 제공합니다.
-        </p>
-
-        <div class="information">
-            <p>장르 : 액션 / 스릴러</p>
-            <p>상영 시간 : 128분</p>
-            <p>관람 등급 : 15세 이상 관람가</p>
-        </div>
-
-        <button class="reservation">예매하기</button>
-        <button class="detail">상세정보</button>
-
-    </div>
-
-</section>
-
-</main>
-
-<section class="recommend">
-
-    <h2>함께 보면 좋은 영화</h2>
-
-    <section class="recommend-section">
-
-        <div class="box">
-            <h4>액션 무비</h4>
-            <p>화려한 전투 장면과 빠른 전개가 돋보이는 영화입니다.</p>
-        </div>
-
-        <div class="box">
-            <h4>로맨스 무비</h4>
-            <p>따뜻한 감성과 인물 간의 관계를 중심으로 전개됩니다.</p>
-        </div>
-
-        <div class="box">
-            <h4>애니메이션 무비</h4>
-            <p>상상력 있는 화면과 가족이 함께 보기 좋은 이야기를 담았습니다.</p>
-        </div>
-
-    </section>
-
-</section>
-
-<footer>
-    © 2026 Movie Preview
-</footer>
-
+    <footer> &copy; Movie Preview</footer>
 </body>
 </html>

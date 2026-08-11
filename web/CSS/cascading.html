@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
 
         #special{
-            color: aqua;
-        }
-        p{
-            color: red;
+            color:aqua;
         }
 
-        .text{
-            color: blue;
+       .text{
+            color:blue;
         }
+
+        /* !important
+        CSS 우선순위를 강제로 가장 높게
+        만드는 키워드 
+        남용하면 유지보수가 어려워진다.*/
+        p{
+            color:red !important;
+        }
+
+ 
     </style>
 </head>
 <body>

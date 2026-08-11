@@ -7,36 +7,40 @@ import java.io.FileOutputStream;
 
 public class DataStreamExample {
 	public static void main(String[] args) {
-
-		try {
-			// 1. 데이터 쓰기
-			FileOutputStream fos = new FileOutputStream("data.dat");
-			DataOutputStream dos = new DataOutputStream(fos);
-
-			//쓴 순서와 읽은 순서가 같아야 함 
+		//DataInputStream
+		//DataOutputStream
+		//기본 자료형 단위로 읽고 쓸 수 있게 해준다.
+		//int, double, boolean, char같은 값들을 바이트로 직접 변환하지 않고
+		//메서드로 편하게 다룰 수 있다.
+		
+		//.dat : 데이터가 들어있는 파일이다 알려주는 확장자
+		
+		try (
+				FileOutputStream fos = new FileOutputStream("data.dat");
+				DataOutputStream dos = new DataOutputStream(fos);
+				FileInputStream fis = new FileInputStream("data.dat");
+				DataInputStream dis = new DataInputStream(fis);){
+			
+			//쓴 순서와 읽는 순서가 같아야 한다.
 			dos.writeInt(100);
 			dos.writeDouble(3.14);
 			dos.writeBoolean(true);
-
-			dos.close(); // ⭐ 반드시 닫기
-
-			// 2. 데이터 읽기
-			FileInputStream fis = new FileInputStream("data.dat");
-			DataInputStream dis = new DataInputStream(fis);
-
+			
 			int a = dis.readInt();
 			double b = dis.readDouble();
 			boolean c = dis.readBoolean();
-
-			dis.close();
-
-			// 출력
+			
 			System.out.println(a);
 			System.out.println(b);
 			System.out.println(c);
-
+			
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 }
+
+
+
+
+

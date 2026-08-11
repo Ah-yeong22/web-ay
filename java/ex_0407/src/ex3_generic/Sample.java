@@ -1,6 +1,7 @@
 package ex3_generic;
 
-public class Sample<T> implements ISample<T> {
+public class Sample<T> implements ISample<T>{
+	
 	private T[] array;
 	
 	public Sample() {
@@ -8,10 +9,10 @@ public class Sample<T> implements ISample<T> {
 	}
 	
 	@Override
-	public void addElment(T t, int index) {
+	public void addElement(T t, int index) {
 		array[index] = t;
-		
 	}
+	
 	@Override
 	public T getElement(int index) {
 		return array[index];

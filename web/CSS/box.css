@@ -1,33 +1,41 @@
 section{
-    border: 1px dashed black;
-    margin-bottom: 10%;
+    border : 1px dashed black;
+    margin-bottom : 10px;
 }
 
 .box{
     width: 100px;
-    height: 20px;
-    color: white;
-    border: 2px solid black;
-    margin: 10px;
+    height : 100px;
+    color : white;
+    border : 2px solid black;
+    margin : 10px;
     text-align: center;
 }
 
 .a{
-    background-color: rgb(37, 122, 122);
-}
-.b{
-    background-color: rgb(167, 139, 103);
-}
-.c{
-    background-color: rgb(80, 78, 170);
-}
-.d{
-    background-color: rgb(122, 37, 122);
-}
-.e{
-    background-color: rgb(167, 41, 41);
-}
-.f{
-    background-color: rgb(25, 22, 252);
+    background : yellowgreen;
 }
 
+.b{
+    background : violet;
+}
+
+.c{
+    background : cornflowerblue;
+}
+
+.d{
+    background : tomato;
+}
+
+.e{
+    background : tan;
+}
+
+.f{
+    background : orange;
+}
+
+.flex-demo{
+    min-height: 200px;
+}

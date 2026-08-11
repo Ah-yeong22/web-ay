@@ -2,9 +2,23 @@ package ex1_overriding;
 
 public class Main {
 	public static void main(String[] args) {
-		RegularEmployee r = new RegularEmployee("김철수",3000000);
-		PrarTimeEmployee p = new PrarTimeEmployee("박철수",10000,3);
-		System.out.println(r.name + r.getPay());
-		System.out.println(p.name + p.getPay());
+		
+		Dog d = new Dog();
+		d.sound();
+		Cat c = new Cat();
+		c.sound();
+		
+		RegularEmployee re = new RegularEmployee("박길동", 2900000);
+		PartTimeEmployee pe = new PartTimeEmployee("김길동", 8, 20000);
+		
+		System.out.println(re.name + " " + re.getPay());
+		System.out.println(pe.name + " " + pe.getPay());
 	}
 }
+
+
+
+
+
+
+
